@@ -1,2 +1,3 @@
 # rest_server
-REST server for Corallium Server
+
+This server is for managing the Corallium enterprise management information
