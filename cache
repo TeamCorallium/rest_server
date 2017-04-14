@@ -1,0 +1,18 @@
+#!/bin/bash
+
+sudo chown -R teratux:www var/cache
+sudo chown -R teratux:www var/logs
+#sudo chown -R teratux:www var/sessions
+sudo chmod -R 777 var/cache
+sudo chmod -R 777 var/logs
+sudo chmod -R 777 var/sessions
+
+./bin/console cache:clear
+
+sudo chown -R teratux:www var/cache
+sudo chown -R teratux:www var/logs
+#sudo chown -R teratux:www var/sessions
+sudo chmod -R 777 var/cache
+sudo chmod -R 777 var/logs
+sudo chmod -R 777 var/sessions
+

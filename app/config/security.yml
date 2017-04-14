@@ -1,0 +1,55 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
+
+    role_hierarchy:
+            ROLE_EMITTER:       ROLE_USER
+            ROLE_MITIGATOR:     ROLE_USER
+            ROLE_THIRDPARTY:    ROLE_USER
+            ROLE_MAINTAINER:    ROLE_ADMIN
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+        in_memory:
+            memory: ~
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+                default_target_path: /redirect
+
+            logout: true
+            anonymous:    true
+            security: true
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/emitter, role: [ROLE_MAINTAINER,ROLE_EMITTER] }
+        - { path: ^/activity, role: [ROLE_MAINTAINER,ROLE_EMITTER,ROLE_MITIGATOR,ROLE_THIRDPARTY]}
+        - { path: ^/profile, role: [ROLE_MAINTAINER,ROLE_EMITTER] }
+        - { path: ^/interaction, role: [ROLE_MAINTAINER,ROLE_EMITTER,ROLE_MITIGATOR,ROLE_THIRDPARTY] }
+        - { path: ^/mitigator, role: [ROLE_MAINTAINER,ROLE_MITIGATOR] }
+        - { path: ^/project, role: [ROLE_MAINTAINER,ROLE_MITIGATOR] }
+        - { path: ^/thirdparty, role: [ROLE_MAINTAINER,ROLE_THIRDPARTY] }
+        - { path: ^/maintainer, role: ROLE_MAINTAINER }
+
+
+
+
+
+
+
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Registro C.P.S!{% endblock %}</title>
+
+    <meta name="description" content="Registro de Ceremonial, Protocolo Y Simbología">
+    <meta name="keywords" content="Registro de Ceremonial, Protocolo Y Simbología">
+
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    {% stylesheets
+        'bundles/registrocps/css/bootstrap4.min.css'
+        'bundles/registrocps/css/font-awesome.min.css'
+        filter='cssrewrite'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {% stylesheets
+    '@RegistroCPSBundle/Resources/public/css/main.css'
+    '@RegistroCPSBundle/Resources/public/css/blue.css'
+    '@RegistroCPSBundle/Resources/public/css/config.css'
+    '@RegistroCPSBundle/Resources/public/css/demo.css'
+    '@RegistroCPSBundle/Resources/public/css/font-awesome.min.css'
+    '@RegistroCPSBundle/Resources/public/css/style3.css'
+    '@RegistroCPSBundle/Resources/public/css/selectize.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+
+
+    {% stylesheets '@RegistroCPSBundle/Resources/public/fonts/glyphicons-halflings-regular.eot' output='fonts/glyphicons-halflings-regular.eot'%}
+    {% endstylesheets %}
+    {% stylesheets '@RegistroCPSBundle/Resources/public/fonts/glyphicons-halflings-regular.svg' output='fonts/glyphicons-halflings-regular.svg'%}
+    {% endstylesheets %}
+    {% stylesheets '@RegistroCPSBundle/Resources/public/fonts/glyphicons-halflings-regular.ttf' output='fonts/glyphicons-halflings-regular.ttf'%}
+    {% endstylesheets %}
+    {% stylesheets '@RegistroCPSBundle/Resources/public/fonts/glyphicons-halflings-regular.woff' output='fonts/glyphicons-halflings-regular.woff'%}
+    {% endstylesheets %}
+    {% stylesheets '@RegistroCPSBundle/Resources/public/fonts/glyphicons-halflings-regular.woff2' output='fonts/glyphicons-halflings-regular.woff2'%}
+    {% endstylesheets %}
+    {% stylesheets '@RegistroCPSBundle/Resources/public/fonts/fontawesome-webfont.eot' output='fonts/fontawesome-webfont.eot'%}
+    {% endstylesheets %}
+    {% stylesheets '@RegistroCPSBundle/Resources/public/fonts/fontawesome-webfont.svg' output='fonts/fontawesome-webfont.svg'%}
+    {% endstylesheets %}
+    {% stylesheets '@RegistroCPSBundle/Resources/public/fonts/fontawesome-webfont.ttf' output='fonts/fontawesome-webfont.ttf'%}
+    {% endstylesheets %}
+    {% stylesheets '@RegistroCPSBundle/Resources/public/fonts/fontawesome-webfont.woff' output='fonts/fontawesome-webfont.woff'%}
+    {% endstylesheets %}
+
+    <script>document.documentElement.className = 'js';</script>
+</head>
+<body>
+
+<nav class="navbar fixed-top navbar-toggleable-md navbar-dark navbar-inverse bg-faded navbar_bg">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+        <div class="media">
+            {% image '@RegistroCPSBundle/Resources/public/images/logo4.png' %}
+                <img src="{{ asset_url }}" class="media-left media-object" width="100px" height="90px" title="Registro C.P.S." >
+            {% endimage %}
+            <div class="media-body pl-3 hidden-lg-down navbar_text"><h3 class="myauto">REGISTRO DE CEREMONIAL PROTOCOLO Y SIMBOLOGÍA</h3>
+            </div>
+        </div>
+    </a>
+
+    <div class="collapse navbar-collapse float-xs-right " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link navbar_text" href="{{ path('registro_cps_homepage') }}">INICIO <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="hidden-md-down">
+                <span class="nav-link hidden-xs-down navbar_sep">|</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar_text" href="{{ path('recursos_index') }}">RECURSOS</a>
+            </li>
+            <li class="hidden-md-down">
+                <span class="nav-link hidden-xs-down navbar_sep">|</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar_text" href="#">NOSOTROS</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+{% javascripts '@RegistroCPSBundle/Resources/public/js/jquery.min.js'
+'@RegistroCPSBundle/Resources/public/js/tether.min.js'
+'@RegistroCPSBundle/Resources/public/js/bootstrap4.min.js'
+'@RegistroCPSBundle/Resources/public/js/selectize.js'
+'@RegistroCPSBundle/Resources/public/js/bootstrap-select.min.js'
+%}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+{% block javascripts %}{% endblock %}
+
+<div class="main-content">
+{% block body %}{% endblock %}
+</div>
+<!-- FOOTER //-->
+<footer id="footer" class="color-bg">
+
+    <div class="container">
+        <div class="row no-margin widgets-row">
+            <div class="col-xs-12  no-margin-left">
+                <!-- ============================================================= FEATURED PRODUCTS ============================================================= -->
+
+                <div  class="link-list-row">
+                    <div class="container no-padding">
+                        <div class="col-xs-12">
+                            <!-- ============================================================= CONTACT INFO ============================================================= -->
+                            <div class="container text-center">
+
+
+                                <p class="regular-bold"> Registro de Ceremonial, Protocolo y Simbología</p>
+
+                                <p>
+                                <div class="contact-row">
+                                    <div class="contact inline">
+                                        <i class="fa fa-envelope"></i> registro@registrocps.com
+                                    </div>
+                                </div>
+
+                                </p>
+
+
+                                <p>
+
+                                    Archivo digital dedicado a la Simbología: escudos, banderas, sellos, marcas, ceremonial y protocolo.
+
+                                </p>
+
+                                <div class="social-icons">
+                                    <ul>
+                                        <li><a target="_blank" href="https://www.facebook.com/RegistroCPS/" class="fa fa-facebook"></a></li>
+                                        <li><a target="_blank" href="https://www.twitter.com/RegistroCPS/" class="fa fa-twitter"></a></li>
+                                    </ul>
+                                </div><!-- /.social-icons -->
+                            </div>
+                        </div>
+
+
+                    </div><!-- /.container -->
+                </div><!-- /.link-list-row -->
+            </div>
+        </div>
+    </div>
+
+
+</footer><!-- /#footer -->
+{% javascripts '@RegistroCPSBundle/Resources/public/js/demo3.js'
+%}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+
+
+</body>
+</html>

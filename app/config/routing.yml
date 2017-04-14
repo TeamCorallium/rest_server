@@ -1,0 +1,3 @@
+corallium_server:
+    resource: "@CoralliumServerBundle/Resources/config/routing.yml"
+    prefix:   /
