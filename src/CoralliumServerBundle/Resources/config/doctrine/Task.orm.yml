@@ -1,0 +1,24 @@
+CoralliumServerBundle\Entity\Task:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\TaskRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: text
+        fromDate:
+            type: date
+            column: from_date
+        toDate:
+            type: date
+            column: to_date
+        cost:
+            type: float
+        stage:
+            type: integer
+    lifecycleCallbacks: {  }

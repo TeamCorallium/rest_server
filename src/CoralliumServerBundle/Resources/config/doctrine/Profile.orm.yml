@@ -1,0 +1,30 @@
+CoralliumServerBundle\Entity\Profile:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\ProfileRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        identity:
+            type: string
+            length: 255
+        birthday:
+            type: date
+
+    oneToOne:
+        user:
+          targetEntity: CoralliumServerBundle\Entity\User
+          mappedBy: profile
+
+        address:
+          targetEntity: CoralliumServerBundle\Entity\Address
+          mappedBy: profile
+
+    lifecycleCallbacks: {  }

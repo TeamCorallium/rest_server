@@ -1,0 +1,34 @@
+CoralliumServerBundle\Entity\Project:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\ProjectRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: text
+        minimalCost:
+            type: float
+            column: minimal_cost
+        fromDate:
+            type: date
+            column: from_date
+        toDate:
+            type: date
+            column: to_date
+        maxInvestors:
+            type: integer
+            column: max_investors
+        stage:
+            type: integer
+        revenueShare:
+            type: float
+            column: revenue_share
+        geotag:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

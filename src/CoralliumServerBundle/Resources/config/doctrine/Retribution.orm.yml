@@ -1,0 +1,21 @@
+CoralliumServerBundle\Entity\Retribution:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\RetributionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        dividends:
+            type: boolean
+        productDelivery:
+            type: boolean
+            column: product_delivery
+        stocks:
+            type: boolean
+        product:
+            type: boolean
+    lifecycleCallbacks: {  }

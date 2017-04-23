@@ -1,0 +1,14 @@
+CoralliumServerBundle\Entity\Contribution:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\ContributionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        amount:
+            type: float
+    lifecycleCallbacks: {  }

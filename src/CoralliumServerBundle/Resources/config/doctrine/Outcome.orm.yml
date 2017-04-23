@@ -1,0 +1,20 @@
+CoralliumServerBundle\Entity\Outcome:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\OutcomeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        quantityProducts:
+            type: integer
+            column: quantity_products
+        income:
+            type: float
+        newBusiness:
+            type: boolean
+            column: new_business
+    lifecycleCallbacks: {  }

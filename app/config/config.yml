@@ -1,6 +1,6 @@
 imports:
     - { resource: parameters.yml }
-    #- { resource: security.yml }
+    - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@CoralliumServerBundle/Resources/config/services.yml" }
     #- { resource: "@ImaginariFondoBundle/Resources/config/services.yml" }
@@ -20,7 +20,7 @@ framework:
     form:            ~
     csrf_protection: ~
     validation:      { enable_annotations: true }
-    #serializer:      { enable_annotations: true }
+    serializer:      { enable_annotations: true }
     templating:
         engines: ['twig']
     default_locale:  "%locale%"
@@ -45,7 +45,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [  ]
+    bundles:        [ CoralliumServerBundle ]
 
     #java: /usr/bin/java
     filters:
@@ -107,13 +107,13 @@ swiftmailer:
     spool:     { type: memory }
 
     
-#fos_user:
-#    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
-#    firewall_name: main
-#    user_class: ImaginariFondoBundle\Entity\User
-#    from_email:
-#        address:        t51@icid.cu
-#        sender_name:    Your App Admin
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: CoralliumServerBundle\Entity\User
+    from_email:
+        address:        t51@icid.cu
+        sender_name:    Your App Admin
 
 knp_paginator:
     page_range: 5                      # default page range used in pagination control

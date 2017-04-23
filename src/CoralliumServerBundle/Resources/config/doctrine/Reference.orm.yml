@@ -1,0 +1,17 @@
+CoralliumServerBundle\Entity\Reference:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\ReferenceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: integer
+        url:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

@@ -1,0 +1,17 @@
+CoralliumServerBundle\Entity\Subproject:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\SubprojectRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    manyToMany:
+        users:
+            targetEntity: CoralliumServerBundle\Entity\User
+            mappedBy: projects
+
+    lifecycleCallbacks: {  }

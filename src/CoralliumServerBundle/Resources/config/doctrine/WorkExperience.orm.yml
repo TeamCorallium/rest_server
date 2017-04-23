@@ -1,0 +1,35 @@
+CoralliumServerBundle\Entity\WorkExperience:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\WorkExperienceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        previous:
+            type: string
+            length: 255
+        fromDate:
+            type: date
+            column: from_date
+        toDate:
+            type: date
+            column: to_date
+
+    oneToOne:
+        skill:
+          targetEntity: CoralliumServerBundle\Entity\Skill
+          mappedBy: workexperience
+
+    manyToOne:
+        profile:
+          targetEntity: CoralliumServerBundle\Entity\Profile
+          inversedBy: workexperiences
+          joinColumns:
+            profile_id:
+              referencedColumnName: id
+
+    lifecycleCallbacks: {  }

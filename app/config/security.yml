@@ -5,10 +5,10 @@ security:
         FOS\UserBundle\Model\UserInterface: sha512
 
     role_hierarchy:
-            ROLE_EMITTER:       ROLE_USER
-            ROLE_MITIGATOR:     ROLE_USER
-            ROLE_THIRDPARTY:    ROLE_USER
-            ROLE_MAINTAINER:    ROLE_ADMIN
+            ROLE_OWNER:         ROLE_USER
+            ROLE_FINANCIER:     ROLE_USER
+            ROLE_GUEST:         ROLE_USER
+            ROLE_ADMIN:         ROLE_ADMIN
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
@@ -37,15 +37,10 @@ security:
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/emitter, role: [ROLE_MAINTAINER,ROLE_EMITTER] }
-        - { path: ^/activity, role: [ROLE_MAINTAINER,ROLE_EMITTER,ROLE_MITIGATOR,ROLE_THIRDPARTY]}
-        - { path: ^/profile, role: [ROLE_MAINTAINER,ROLE_EMITTER] }
-        - { path: ^/interaction, role: [ROLE_MAINTAINER,ROLE_EMITTER,ROLE_MITIGATOR,ROLE_THIRDPARTY] }
-        - { path: ^/mitigator, role: [ROLE_MAINTAINER,ROLE_MITIGATOR] }
-        - { path: ^/project, role: [ROLE_MAINTAINER,ROLE_MITIGATOR] }
-        - { path: ^/thirdparty, role: [ROLE_MAINTAINER,ROLE_THIRDPARTY] }
-        - { path: ^/maintainer, role: ROLE_MAINTAINER }
-
+        - { path: ^/owner, role: [ROLE_ADMIN,ROLE_OWNER] }
+        - { path: ^/financier, role: [ROLE_ADMIN,ROLE_FINANCIER]}
+        - { path: ^/guest, role: [ROLE_MAINTAINER,ROLE_GUEST] }
+        - { path: ^/admin, role: [ROLE_ADMIN] }
 
 
 

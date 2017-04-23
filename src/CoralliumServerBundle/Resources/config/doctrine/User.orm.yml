@@ -1,0 +1,17 @@
+CoralliumServerBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    manyToMany:
+        projects:
+            targetEntity: CoralliumServerBundle\Entity\Subproject
+            inversedBy: users
+
+    lifecycleCallbacks: {  }

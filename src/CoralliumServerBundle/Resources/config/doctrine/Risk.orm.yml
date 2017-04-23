@@ -1,0 +1,18 @@
+CoralliumServerBundle\Entity\Risk:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\RiskRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: string
+            length: 255
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

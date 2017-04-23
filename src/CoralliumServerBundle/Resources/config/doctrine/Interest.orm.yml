@@ -1,0 +1,23 @@
+CoralliumServerBundle\Entity\Interest:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\InterestRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+
+    manyToOne:
+        profile:
+          targetEntity: CoralliumServerBundle\Entity\Profile
+          inversedBy: interests
+          joinColumns:
+            profile_id:
+              referencedColumnName: id
+    lifecycleCallbacks: {  }

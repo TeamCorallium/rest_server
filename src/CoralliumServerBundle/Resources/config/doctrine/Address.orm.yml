@@ -1,0 +1,21 @@
+CoralliumServerBundle\Entity\Address:
+    type: entity
+    table: null
+    repositoryClass: CoralliumServerBundle\Repository\AddressRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        country:
+            type: integer
+        province:
+            type: integer
+        city:
+            type: integer
+        region:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
