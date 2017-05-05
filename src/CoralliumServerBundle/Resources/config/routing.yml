@@ -1,3 +1,12 @@
+corallium_server_user:
+    resource: "@CoralliumServerBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
 corallium_server_homepage:
     path:     /
     defaults: { _controller: CoralliumServerBundle:Default:index }
+
+corallium_server_register_user:
+    path:     /registerUser
+    defaults: { _controller: CoralliumServerBundle:User:registerUser }
+

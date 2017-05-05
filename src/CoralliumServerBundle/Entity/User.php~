@@ -28,4 +28,43 @@ class User extends BaseUser
     {
         return $this->id;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $projects;
+
+
+    /**
+     * Add project
+     *
+     * @param \CoralliumServerBundle\Entity\Subproject $project
+     *
+     * @return User
+     */
+    public function addProject(\CoralliumServerBundle\Entity\Subproject $project)
+    {
+        $this->projects[] = $project;
+
+        return $this;
+    }
+
+    /**
+     * Remove project
+     *
+     * @param \CoralliumServerBundle\Entity\Subproject $project
+     */
+    public function removeProject(\CoralliumServerBundle\Entity\Subproject $project)
+    {
+        $this->projects->removeElement($project);
+    }
+
+    /**
+     * Get projects
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProjects()
+    {
+        return $this->projects;
+    }
 }

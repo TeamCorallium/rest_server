@@ -9,6 +9,28 @@ CoralliumServerBundle\Entity\Subproject:
             generator:
                 strategy: AUTO
 
+    fields:
+        minimalCost:
+            type: float
+            column: minimal_cost
+        fromDate:
+            type: date
+            column: from_date
+        toDate:
+            type: date
+            column: to_date
+        maxInvestors:
+            type: integer
+            column: max_investors
+        stage:
+            type: integer
+        revenueShare:
+            type: float
+            column: revenue_share
+        geotag:
+            type: string
+            length: 255
+
     manyToMany:
         users:
             targetEntity: CoralliumServerBundle\Entity\User

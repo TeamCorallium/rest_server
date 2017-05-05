@@ -15,7 +15,7 @@ class DefaultController extends FOSRestController
             ->setTemplateVar('users')
         ;
 
-        $view->setFormat("json");
+        $view->setFormat("xml");
 
         return $this->handleView($view);
     }

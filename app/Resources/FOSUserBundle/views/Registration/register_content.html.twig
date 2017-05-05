@@ -1,0 +1,13 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<p class="profile-name-card">ENTRE SUS DATOS</p>
+
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register form-signin'}}) }}
+    {{ form_widget(form.username, { 'attr': {'class': 'form-control login_input', 'placeholder' : 'Usuario'} }) }}
+    {{ form_widget(form.email, { 'attr': {'class': 'form-control login_input', 'placeholder' : 'Correo electrónico'} }) }}
+    {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control login_input', 'placeholder' : 'Contraseña'} }) }}
+    {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control login_input', 'placeholder' : 'Contraseña nuevamente'} }) }}
+    <div>
+        <button class="btn btn-primary btn-block btn-lg btn-register btn-login mt-4" type="submit">Registrarme</button>
+    </div>
+{{ form_end(form) }}

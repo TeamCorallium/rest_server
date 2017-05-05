@@ -1,0 +1,41 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+
+{% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{ error.messageKey|trans(error.messageData, 'security') }}
+    </div>
+{% endif %}
+<form class="form-signin" action="#" method="post"><span class="reauth-email"> </span>
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+    <input class="form-control login_input" type="username" required="required" placeholder="Usuario" autofocus="" name="_username" id="inputEmail" value="{{ last_username }}">
+    <input class="form-control login_input" type="password" required="required" placeholder="Contraseña" name="_password" id="inputPassword">
+    <div class="checkbox">
+        <div class="checkbox">
+            <label class="custom-control custom-checkbox">
+                <input type="checkbox" checked="" id="remember" class="custom-control-input" name="_remember_me"> <span id="remember_me" class="custom-control-indicator"> </span><span id="remember_text" class="custom-control-description ml-2">Recordarme </span></label>
+        </div>
+    </div>
+    <button class="btn btn-primary btn-block btn-lg btn-signin btn-login mt-4" type="submit">ENTRAR </button>
+</form>
+
+
+{#<form action="{{ path("fos_user_security_check") }}" method="post">#}
+
+
+    {#<label for="username">{{ 'security.login.username'|trans }}</label>#}
+    {#<input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />#}
+
+    {#<label for="password">{{ 'security.login.password'|trans }}</label>#}
+    {#<input type="password" id="password" name="_password" required="required" />#}
+
+    {#<input type="checkbox" id="remember_me" name="_remember_me" value="on" />#}
+    {#<label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>#}
+
+    {#<input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />#}
+{#</form>#}
+
+{% endblock %}
