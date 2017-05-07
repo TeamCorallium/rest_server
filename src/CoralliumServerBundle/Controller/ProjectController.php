@@ -6,6 +6,7 @@ use CoralliumServerBundle\Entity\Project;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations\RouteResource;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
  * Project controller.
@@ -23,13 +24,20 @@ class ProjectController extends FOSRestController
      */
     public function indexAction()
     {
+        if (!$this->get('security.authorization_checker')->isGranted('ROLE_USER')) {
+            throw new AccessDeniedException();
+        }
+        
         $em = $this->getDoctrine()->getManager();
 
         $projects = $em->getRepository('CoralliumServerBundle:Project')->findAll();
 
-        return $this->render('project/index.html.twig', array(
-            'projects' => $projects,
-        ));
+        $data = array ( "projects" => serialize($projects) );
+        $view = $this->view($data, 200);
+
+        $view->setFormat("json");
+
+        return $this->handleView($view);
     }
 
     /**

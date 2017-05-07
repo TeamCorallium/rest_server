@@ -1,0 +1,16 @@
+login_check:
+    path: /login_check
+
+corallium_api_ping:
+    path: /ping
+    defaults: { _controller: 'CoralliumServerBundle:Default:ping' }
+    requirements:
+        _method: HEAD|GET
+
+users:
+    type:     rest
+    resource: CoralliumServerBundle\Controller\UserController
+
+projects:
+    type:     rest
+    resource: CoralliumServerBundle\Controller\ProjectController    

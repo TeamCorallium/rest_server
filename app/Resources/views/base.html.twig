@@ -17,20 +17,68 @@
 		        "plainPassword":{
 		            "first": "abc",
 		            "second": "abc",
-		        },
+		        }
         	}
         };
 
         $.ajax({
             data: abc,
             url: "{{ path('corallium_server_register_user') }}",
+            headers: {
+                "bearer" : "eyJhbGciOiJSUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0dVRVNUIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidGVyYXR1eCIsImV4cCI6MTQ5NDEyNTcyMywiaWF0IjoxNDk0MTIyMTIzfQ.VfHct0WR3dKcG4DYHQ-0FZpSNUetrQmnV0XUOdnJqFWHBbfNUV9gu1XmU8zm5VQeIMmLGSnxdcj1Ut2XG80u_h0ZhKUtErQjxPcvr461FtE--FK2rBQ17Z4lvAi-F4G6EPa6RVhquFXLnD0t9Mlkzv3fbTKJIq8b3B1PVdRiWRiRV-XtDceosyNaAK5RswLUxQLJ2dXAs-FXGRgo4zDc4lgOVnOYfc_Pubcbtf2LgxiAvN06qHaPTcrJ6UkiBe815lUY7ikyB5bzeBdtYP7e4pbhyyfSP79uChEZAdHnB5c_aKr4MgZC9N3uI47In7oBAcvozdVPgFl8NVs5XYKxuDqcPsRzVDalqnI0Kkf65TSkwjFa8sToXuzqDby-voDhup2nNGa6fqqlvThALE598K1om44TlicFvBbIMlXKax-qh0og6HhX4d2temV9jo8lMCBOV5OG06q2eEg0wMsG1CGKRNGVoVvf4FAtCMyKy5uw62nl0KztymVx3J92LjNAwM-TInfhZhUX4U8YJavvjwGx3lOZTbCG-jal81p7CDXtGZP3vK0H-H_m9L6P_UfSxgglqETzHWRob4kSzLvcR-3a-Rre5hMKr70aZKE8ZJ3eha__MtE1kFBYZBG4wsbuBzcyC8uVAuxUVTfbUw4xI0HK88dTIzXoETqASdGhQ6M"
+            },
             method: "post",
-            beforeSend: function() {},
+            beforeSend: function(  xhr ) {
+            },
             success: function( a ) {
                 alert(a);
             },
             error: function ( a ) {
             	alert( a );
+            }
+        });
+    }
+
+    function ping() 
+    {
+        var abc = {
+                "username": "teratux",
+                "password": "abc",
+                "bearer" : "eyJhbGciOiJSUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0dVRVNUIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidGVyYXR1eCIsImV4cCI6MTQ5NDEzMjQ5NSwiaWF0IjoxNDk0MTI4ODk1fQ.sXG0JuN1NEa_y1x5BPD04-EPMF0gfiUY8BhH57Uh4vZgT2irb9C5fM_ksRF11vCIE1raMHePCHA3r3YK3DKKRsTqQfPCbNftj_G6N8nyuz6HTa_qo_-Z3VqaV710TOBLdTdyZrj867MLEOXhwA8tPTBLbsEW_fssjnMZOSd3Xhdxr79ASJOsLtUA-HmwOGXkpZ_MxqX1Qm3XknfpsIyt9leP1X590NX9UDD5eSjasd8pbZgMITY9fN9WIwvMd_qzzBt4EsdkH5S5zIS1XckyuAXStMFqO6HBLWegUTKDfqrj_IClR43_TKZ_85bM-eKpLb9sdpsU2OMKGUufMakCwzPErNGpciFK6JwtPqXVYSSJoobB8WJ-mu0W_ou937h3vUluhU6legeWGbbeOagjbT5nLksw0i3Eg0WtFwv3Ez4msoIxrN9mDuie872LXWbu6BWv3T1czWEAnKvEOup4sG7yfjX57hwx5e8HpqFAeFa39BtN9JDjzk1zT28NVLEbpujdtTUa5M_Oa3_zKjY6R4GhpD-7p_1c6EqiWUtuqWZe6mYIptIhXMr_pL2HbDQKdNbKmLw59Zxa18RTFK_Mv4uYMPQGL9tgCzX83ZRnWhET04C7wqo3bIxeesz6Cf52SY8U5tlu415Kgaw-02KDQ4Z66qyEQEgeYKp2ttsZj7E"
+        };
+        $.ajax({
+            data: abc,
+            url: "{{ path('index_project') }}",
+            method: "get",
+            beforeSend: function() {
+            },
+            success: function( a ) {
+                alert(a);
+            },
+            error: function ( a ) {
+                alert( a );
+            }
+        });
+    }
+
+    function login() 
+    {
+        var abc = {
+                "username": "teratux",
+                "password": "abc",
+                "token" : ""
+        };
+        $.ajax({
+            data: abc,
+            url: "{{ path('login_check') }}",
+            method: "post",
+            beforeSend: function() {
+            },
+            success: function( a ) {
+                alert(a);
+            },
+            error: function ( a ) {
+                alert( a );
             }
         });
     }
@@ -44,6 +92,9 @@
 {% endblock %}
 
         <button onclick="sendUser()">Send User</button>
+
+        <button onclick="ping()">Ping</button>
+        <button onclick="login()">Login</button>
 
 </body>
 

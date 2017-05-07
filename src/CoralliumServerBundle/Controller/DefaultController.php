@@ -4,6 +4,7 @@ namespace CoralliumServerBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends FOSRestController
 {
@@ -16,6 +17,21 @@ class DefaultController extends FOSRestController
         ;
 
         $view->setFormat("xml");
+
+        return $this->handleView($view);
+    }
+
+    /**
+     * Just to demonstrate authentication result
+     *
+     * @return JsonResponse
+     */
+    public function pingAction()
+    {
+        $data = array ( "ping" => 1 );
+        $view = $this->view($data, 200);
+
+        $view->setFormat("json");
 
         return $this->handleView($view);
     }
