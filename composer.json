@@ -29,7 +29,8 @@
         "knplabs/knp-paginator-bundle": "^2.5",
         "symfony/assetic-bundle": "^2.8",
         "symfony/options-resolver": "2.4.9",
-        "friendsofsymfony/rest-bundle": "^2.1"
+        "friendsofsymfony/rest-bundle": "^2.1",
+        "lexik/jwt-authentication-bundle": "^2.3"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

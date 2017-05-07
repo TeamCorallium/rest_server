@@ -1,0 +1,408 @@
+@font-face {
+  font-family:'DINPROLight';
+  src:url("../fonts/DINPRO-LIGHT.OTF");
+}
+
+@font-face {
+  font-family:'DINPROBlack';
+  src:url("../fonts/DINPRO-BLACK.OTF");
+}
+
+@font-face {
+  font-family:DINPRORegular;
+  src:url("../fonts/DINPRO-REGULAR.OTF");
+}
+
+body {
+  font-family:DINPRORegular;
+  font-size:18px;
+}
+
+div.header-login {
+  height:699px;
+  background:url("../images/header_login.jpg");
+  background-size:cover;
+  background-position:center;
+  background-clip:padding-box;
+}
+
+div.header-main {
+  height:699px;
+  background:url("../images/header.jpg");
+  background-size:cover;
+  background-position:center;
+  background-clip:padding-box;
+}
+
+@media (max-width:767px) {
+  .header-dark .navbar {
+    padding-top:0;
+    padding-bottom:0;
+  }
+}
+
+#topnav {
+  background:transparent;
+  padding-top:60px;
+  padding-bottom:10px;
+  padding-right:200px;
+  border-radius:0;
+  box-shadow:none;
+  border:none;
+  font-family:"DINPROLight" !important;
+  font-size:18px;
+}
+
+.header-dark .navbar .navbar-collapse p .login {
+  color:#040404;
+  margin-right:10px;
+  text-decoration:none;
+}
+
+div.row.header_center_logo {
+  padding-top:230px;
+}
+
+div.row.header_login_logo {
+  padding-top:20px;
+}
+
+div#header_logo {
+  background-color:transparent;
+  border-color:transparent;
+}
+
+.header_logo_text.text-center {
+  color:white;
+}
+
+#menu {
+  height:100px;
+  font-size:18px;
+  margin-bottom: 0px !important;
+}
+
+#menu_row {
+  background-color:rgba(3,3,3,0.478431);
+}
+
+.movedamn {
+  margin-left:200px;
+}
+
+nav#topnav a {
+  color:black;
+}
+
+nav#menu a {
+  color:white;
+}
+
+nav#topnav a:hover {
+  color:grey;
+}
+
+nav#menu a:hover {
+  color:grey;
+}
+
+div#header-logo-block.card-block {
+  padding-bottom:32px;
+}
+
+#menu-1 {
+  height:1%;
+}
+
+div#middle-section-first-row.row {
+  padding-top:100px;
+}
+
+div#middle-section-second-row.row {
+  padding-top:100px;
+}
+
+.welcome-text {
+  color:rgb(57,181,74);
+  font-size:20px;
+}
+
+div.row.middle-card {
+  background-color:rgba(0,0,0,0.07);
+  height:250px;
+}
+
+#masked-card-1 {
+  background-image:url("../images/masked_cards_1.png");
+}
+
+#masked-card-2 {
+  background-image:url("../images/masked_cards_2.png");
+}
+
+#masked-card-3 {
+  background-image:url("../images/masked_cards_3.png");
+}
+
+#masked-card-4 {
+  background-image:url("../images/masked_cards_4.png");
+}
+
+#masked-card-5 {
+  background-image:url("../images/masked_cards_5.png");
+}
+
+div.row.middle-card-first-row {
+  height:83px;
+}
+
+span.middle-card-header {
+  color:white;
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.masked-card {
+  height:100%;
+  display:table;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+div.row.middle-card-second-row {
+  height:200px;
+}
+
+.middle-card-text {
+  margin-top:25px;
+}
+
+div#footer {
+  background-image:url("../images/footer_back.jpg");
+  height:590px;
+  max-height: 590px;
+  background-size:cover;
+  background-position:center;
+  background-clip:padding-box;
+}
+
+div#footer-second {
+  height:100px;
+  background-color:rgba(0,0,0,0.63);
+  display:table;
+  width: 100%;
+}
+
+#footer-second a {
+  color: white;
+}
+
+#footer-second a:hover {
+  color:grey;
+}
+
+.footer-row {
+  margin-left:0px;
+}
+
+span#copyright {
+  color:white;
+  display:table-cell;
+  vertical-align:middle;
+}
+
+div#footer-contact.row {
+  padding-top:60px;
+  font-family:DINPROBlack;
+  color:white;
+}
+
+div#parallax-section {
+  padding-bottom:135px;
+  background-image:url("../images/clouds2.png");
+  background-position:center;
+  background-size:cover;
+}
+
+body {
+  position:relative;
+}
+
+.login-card {
+  max-width:370px;
+  padding:22px 40px;
+  background-color:rgba(124,124,124,0.5);
+  margin:0 auto 25px;
+  margin-top:20px;
+  height:360px;
+  border-radius:2px;
+  box-shadow:0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login-card .profile-name-card {
+  font-size:16px;
+  font-weight:bold;
+  text-align:center;
+  min-height:1em;
+  color:white;
+}
+
+.login_input {
+  background-color:rgba(157,198,234,0.4);
+  color:white;
+  border-radius:5px;
+  border-style:none;
+  margin-bottom: 10px;
+}
+
+.login-card .btn.btn-login {
+  font-weight:700;
+  height:36px;
+  line-height:36px;
+  font-size:14px;
+  background:rgb(104, 145, 162);
+  border-radius:3px;
+  border:none;
+  transition:all 0.218s;
+  padding:0;
+}
+
+.login-card .btn.btn-signin:hover, .login-card .btn.btn-signin:active, .login-card .btn.btn-signin:focus {
+  background:#073385;
+}
+
+.login-card .btn.btn-register:hover, .login-card .btn.btn-register:active, .login-card .btn.btn-register:focus {
+  background:#4f8d3b;
+}
+
+#remember_me {
+  background-color:rgba(157,198,234,0.4);
+  width:20px;
+  height:20px;
+  border-radius:5px;
+}
+
+#remember:checked ~ #remember_me {
+  background-image:url("../images/checked.png");
+  background-size:14px;
+}
+
+#remember_text {
+  color:white;
+}
+
+div.circle {
+  background-color:transparent;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  border-color:white;
+  border-width:2px;
+  border-style:solid;
+  color:white;
+  font-size:30px;
+}
+
+.contact_text {
+  color:white;
+  font-size:16px;
+  margin-top:20px;
+}
+
+@media (min-width:768px) {
+  span.contact_label {
+    font-size:95px;
+  }
+}
+
+@media (max-width:768px) {
+  span.contact_label {
+    font-size:40px;
+  }
+}
+
+#bottom_section {
+  height:auto;
+}
+
+.sticky.is-sticky {
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  z-index:1000;
+  /*width:100%;*/
+}
+
+.navbar-brand {
+  display: none;
+  /*padding-left:0px;*/
+}
+
+.is-sticky .navbar-brand {
+  display: block;
+}
+
+.menu_toolbox
+{
+  display: none;
+}
+
+.is-sticky .menu_toolbox
+{
+  display: block;
+}
+
+.is-sticky .nav_sticky {
+  /*margin-top: 20px;*/
+}
+
+#menu.is-sticky {
+  background-color:rgba(1,1,1,0.619608);
+  background-image:url(../images/float_menu_bg.jpg);
+  height:96px;
+  width: 100%;
+}
+
+#menu_container {
+  margin-left:0;
+  margin-right:0;
+}
+
+.login_input::-webkit-input-placeholder {
+  color: #cbcbcb;
+}
+
+.login_input:-moz-placeholder {
+  color: #cbcbcb;
+  opacity:1;
+}
+
+.login_input::-moz-placeholder {
+  color: #cbcbcb;
+  opacity:1;
+}
+
+.login_input:-ms-input-placeholder {
+  color: #cbcbcb;
+}
+
+#menu_toggler{
+  color :white !important;
+}
+
+@media (max-width:768px) {
+  #menu_container {
+    background-color: rgba(40,40,40,0.9);
+
+  }
+}
+
+.body-content {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.body-content p {
+  text-align: justify;
+}

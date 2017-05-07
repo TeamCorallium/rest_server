@@ -10,3 +10,13 @@ corallium_server_register_user:
     path:     /registerUser
     defaults: { _controller: CoralliumServerBundle:User:registerUser }
 
+users:
+    type:     rest
+    resource: CoralliumServerBundle\Controller\UserController
+
+projects:
+    type:     rest
+    resource: CoralliumServerBundle\Controller\ProjectController
+
+api_login_check:
+    path: /api/login_check

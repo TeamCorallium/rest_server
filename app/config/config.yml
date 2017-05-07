@@ -115,7 +115,8 @@ fos_rest:
             json: true
             html: false
         failed_validation: HTTP_BAD_REQUEST
-
+    routing_loader:
+        default_format: json
     disable_csrf_role: ROLE_USER
 
 fos_user:
@@ -136,3 +137,9 @@ knp_paginator:
     template:
         pagination: 'RegistroCPSBundle:Pagination:sliding.html.twig'     # sliding pagination controls template
         sortable: 'KnpPaginatorBundle:Pagination:sortable_link.html.twig' # sort link template
+
+lexik_jwt_authentication:
+    private_key_path: '%jwt_private_key_path%'
+    public_key_path:  '%jwt_public_key_path%'
+    pass_phrase:      '%jwt_key_pass_phrase%'
+    token_ttl:        '%jwt_token_ttl%'

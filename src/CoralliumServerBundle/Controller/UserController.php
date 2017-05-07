@@ -3,14 +3,19 @@
 namespace CoralliumServerBundle\Controller;
 
 use CoralliumServerBundle\Entity\User;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\FOSRestController;
 
+use FOS\RestBundle\Controller\Annotations\RouteResource;
+
 /**
  * User controller.
  *
+ */
+
+/**
+ * @RouteResource("User", pluralize=false)
  */
 class UserController extends FOSRestController
 {
@@ -71,7 +76,7 @@ class UserController extends FOSRestController
                 $dispatcher->dispatch(\FOS\UserBundle\FOSUserEvents::REGISTRATION_COMPLETED, new \FOS\UserBundle\Event\FilterUserResponseEvent($user, $request, $response));
 
                 $data = array ("success" => $user->getUsername()."created");
-                $view = $this->view($data, Response::HTTP_OK);
+                $view = $this->view(array('token'=>$this->get("lexik_jwt_authentication.jwt_manager")->create($user)), Response::HTTP_OK);
                 $view->setFormat("json");
 
                 return $this->handleView($view);
@@ -94,7 +99,7 @@ class UserController extends FOSRestController
         $view->setFormat("json");
 
         return $this->handleView($view);
-    }
+    }  // "register_user"           [POST] /registerUser
     /**
      * Creates a new user entity.
      *

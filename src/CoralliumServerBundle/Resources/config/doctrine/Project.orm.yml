@@ -11,4 +11,9 @@ CoralliumServerBundle\Entity\Project:
     fields:
         description:
             type: text
+
+    oneToMany:
+        subprojects:
+            targetEntity: CoralliumServerBundle\Entity\SubProject
+            mappedBy: project
     lifecycleCallbacks: {  }
