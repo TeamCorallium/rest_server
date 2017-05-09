@@ -16,6 +16,7 @@ CoralliumServerBundle\Entity\User:
 
     oneToOne:
         profile:
-          targetEntity: CoralliumServerBundle\Entity\Profile
+            targetEntity: CoralliumServerBundle\Entity\Profile
+            cascade: ["persist"]
 
     lifecycleCallbacks: {  }

@@ -21,6 +21,5 @@ CoralliumServerBundle\Entity\Profile:
     oneToOne:
         address:
           targetEntity: CoralliumServerBundle\Entity\Address
-          mappedBy: profile
 
     lifecycleCallbacks: {  }

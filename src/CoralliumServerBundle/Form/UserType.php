@@ -26,7 +26,8 @@ class UserType extends AbstractType
                 'second_options' => array('label' => 'password_confirmation'),
 
             ))
-        ->add('projects')->add('profile');
+        ->add('projects')
+        ->add('profile', ProfileType::class );
     }
     
     /**
