@@ -28,11 +28,6 @@ class Profile
     private $birthday;
 
     /**
-     * @var \CoralliumServerBundle\Entity\User
-     */
-    private $user;
-
-    /**
      * @var \CoralliumServerBundle\Entity\Address
      */
     private $address;
@@ -130,30 +125,6 @@ class Profile
     public function getBirthday()
     {
         return $this->birthday;
-    }
-
-    /**
-     * Set user
-     *
-     * @param \CoralliumServerBundle\Entity\User $user
-     *
-     * @return Profile
-     */
-    public function setUser(\CoralliumServerBundle\Entity\User $user = null)
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return \CoralliumServerBundle\Entity\User
-     */
-    public function getUser()
-    {
-        return $this->user;
     }
 
     /**

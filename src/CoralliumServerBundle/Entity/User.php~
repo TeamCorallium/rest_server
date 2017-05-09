@@ -67,4 +67,62 @@ class User extends BaseUser
     {
         return $this->projects;
     }
+    /**
+     * @var \CoralliumServerBundle\Entity\Profile
+     */
+    private $profile;
+
+
+    /**
+     * Set profile
+     *
+     * @param \CoralliumServerBundle\Entity\Profile $profile
+     *
+     * @return User
+     */
+    public function setProfile(\CoralliumServerBundle\Entity\Profile $profile = null)
+    {
+        $this->profile = $profile;
+
+        return $this;
+    }
+
+    /**
+     * Get profile
+     *
+     * @return \CoralliumServerBundle\Entity\Profile
+     */
+    public function getProfile()
+    {
+        return $this->profile;
+    }
+    /**
+     * @var string
+     */
+    private $role_tmp;
+
+
+    /**
+     * Set roleTmp
+     *
+     * @param string $roleTmp
+     *
+     * @return User
+     */
+    public function setRoleTmp($roleTmp)
+    {
+        $this->role_tmp = $roleTmp;
+
+        return $this;
+    }
+
+    /**
+     * Get roleTmp
+     *
+     * @return string
+     */
+    public function getRoleTmp()
+    {
+        return $this->role_tmp;
+    }
 }

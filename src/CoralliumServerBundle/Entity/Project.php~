@@ -254,4 +254,50 @@ class Project
     {
         return $this->geotag;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $subprojects;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->subprojects = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add subproject
+     *
+     * @param \CoralliumServerBundle\Entity\SubProject $subproject
+     *
+     * @return Project
+     */
+    public function addSubproject(\CoralliumServerBundle\Entity\SubProject $subproject)
+    {
+        $this->subprojects[] = $subproject;
+
+        return $this;
+    }
+
+    /**
+     * Remove subproject
+     *
+     * @param \CoralliumServerBundle\Entity\SubProject $subproject
+     */
+    public function removeSubproject(\CoralliumServerBundle\Entity\SubProject $subproject)
+    {
+        $this->subprojects->removeElement($subproject);
+    }
+
+    /**
+     * Get subprojects
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSubprojects()
+    {
+        return $this->subprojects;
+    }
 }

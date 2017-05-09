@@ -8,10 +8,14 @@ CoralliumServerBundle\Entity\User:
             id: true
             generator:
                 strategy: AUTO
-
+           
     manyToMany:
         projects:
             targetEntity: CoralliumServerBundle\Entity\Subproject
             inversedBy: users
+
+    oneToOne:
+        profile:
+          targetEntity: CoralliumServerBundle\Entity\Profile
 
     lifecycleCallbacks: {  }

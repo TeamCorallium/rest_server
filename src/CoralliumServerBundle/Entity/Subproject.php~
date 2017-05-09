@@ -271,4 +271,33 @@ class Subproject
     {
         return $this->geotag;
     }
+    /**
+     * @var \CoralliumServerBundle\Entity\Project
+     */
+    private $project;
+
+
+    /**
+     * Set project
+     *
+     * @param \CoralliumServerBundle\Entity\Project $project
+     *
+     * @return Subproject
+     */
+    public function setProject(\CoralliumServerBundle\Entity\Project $project = null)
+    {
+        $this->project = $project;
+
+        return $this;
+    }
+
+    /**
+     * Get project
+     *
+     * @return \CoralliumServerBundle\Entity\Project
+     */
+    public function getProject()
+    {
+        return $this->project;
+    }
 }

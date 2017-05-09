@@ -46,8 +46,6 @@ class UserController extends FOSRestController
         $user = $userManager->createUser();
         $user->setEnabled(true);
 
-        $role = 'ROLE_GUEST';
-        $user->setRoles( array($role) );
         $event = new \FOS\UserBundle\Event\GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(\FOS\UserBundle\FOSUserEvents::REGISTRATION_INITIALIZE, $event);
 
@@ -57,7 +55,6 @@ class UserController extends FOSRestController
 
         $form = $formFactory->createForm();
         $form->setData($user);
-
         $form->handleRequest($request);
 
         if ( $form->isSubmitted() ) {
@@ -66,6 +63,15 @@ class UserController extends FOSRestController
 
                 $dispatcher->dispatch(\FOS\UserBundle\FOSUserEvents::REGISTRATION_SUCCESS, $event);
 
+                $roles = $request->get('role_tmp');
+                $roles = array_unique( $roles );
+
+                $found = array_search( "ROLE_ADMIN", $roles );
+                if ( $found )
+                {
+                    unset( $roles[$found] ); 
+                }
+                $user->setRoles( $roles );
                 $userManager->updateUser($user);
 
                 if (null === $response = $event->getResponse()) {
@@ -75,8 +81,8 @@ class UserController extends FOSRestController
 
                 $dispatcher->dispatch(\FOS\UserBundle\FOSUserEvents::REGISTRATION_COMPLETED, new \FOS\UserBundle\Event\FilterUserResponseEvent($user, $request, $response));
 
-                $data = array ("success" => $user->getUsername()."created");
-                $view = $this->view(array('token'=>$this->get("lexik_jwt_authentication.jwt_manager")->create($user)), Response::HTTP_OK);
+                $data = array ("success" => $user->getUsername()." created");
+                $view = $this->view($data, Response::HTTP_OK);
                 $view->setFormat("json");
 
                 return $this->handleView($view);

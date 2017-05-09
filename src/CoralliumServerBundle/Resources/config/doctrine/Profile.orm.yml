@@ -19,10 +19,6 @@ CoralliumServerBundle\Entity\Profile:
             type: date
 
     oneToOne:
-        user:
-          targetEntity: CoralliumServerBundle\Entity\User
-          mappedBy: profile
-
         address:
           targetEntity: CoralliumServerBundle\Entity\Address
           mappedBy: profile

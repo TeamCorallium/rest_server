@@ -7,7 +7,6 @@ security:
     role_hierarchy:
             ROLE_OWNER:         ROLE_USER
             ROLE_FINANCIER:     ROLE_USER
-            ROLE_GUEST:         ROLE_USER
             ROLE_ADMIN:         ROLE_ADMIN
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
